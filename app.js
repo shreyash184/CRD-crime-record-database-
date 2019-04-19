@@ -1,8 +1,9 @@
 const express = require("express");
+const bodyParser = require('body-parser')
 var mysql = require("mysql");
 
 var app = express();
-
+app.use(bodyParser.urlencoded({ extended: false }));
 //Database Connections
 var con = mysql.createConnection({
     host: "localhost",
@@ -11,17 +12,39 @@ var con = mysql.createConnection({
     database: "records",
 });
 
-con.connect( (err) => {
-    if(err){
-        console.log(err);
-    } else{
-        console.log("Database Created");
-    }
-});
+//Functions
+function mysqlQuery(query){
+    // con.connect( (err) => {
+    //     if(err){
+    //         console.error('Error:- ' + err.stack);
+    //         return;
+    //     } else{
+            con.query( query, (err, queryOutput) => {
+                if(err) {
+                    console.log(err);
+                    return;
+                }
+                else{
+                    console.log("query successfully executed");
+                    console.log(queryOutput);
+                }
+            });
+        // }
+    // });
+}
 
 //Route
 app.get("/", (req, res) => {
-    res.send("Hello Peeps");
+    res.send("Welcome all of you");
+});
+
+app.get("/query", (req, res) => {
+    res.render("home.ejs");
+});
+
+app.post("/query", (req, res) => {
+    mysqlQuery(req.body.name);
+    
 });
 
 //Server Port Connection
