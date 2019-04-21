@@ -20,7 +20,7 @@ con.connect((err) => {
     }
 });
 
-//Functions
+//Functions this function for crimminal_records table
 function mysqlQuery(query, res) {
     con.query(query, (err, queryOutput) => {
         if (err) {
@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
 
 app.get("/query", (req, res) => {
     res.render("home.ejs");
+});
+
+app.get("/criminal-records", (req, res) => {
+    mysqlQuery("SELECT * FROM criminal", res);
 });
 
 app.post("/query", (req, res) => {
