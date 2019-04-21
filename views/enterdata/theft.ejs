@@ -1,0 +1,25 @@
+<% include ../../partials/header.ejs %>
+
+<div class="container">
+	<form>
+		<div class="form-group">
+			<!-- TODO add bootstrap -->
+			<h3>Name of victim</h3>
+			<label for="first name" id="f">First Name:</label>
+			<input class="form-control" id="vfirst" type="text" name="x" required>
+			<label for="middle name" id="m">Middle Name:</label>
+			<input class="form-control" id="vmiddle" type="text" name="z" required>
+			<label for="last name" id="l">Last Name:</label>
+			<input class="form-control" id="vlast" type="text" name="y" required>
+		</div>
+		<div class="form-group">
+			<h3>Theft information</h3>
+			<label for="things stolen">Enter Stolen Things</label>
+			<input class="form-control" type="text" name="things stolen" required>
+			<label for="criminal appearence" id="ca">Criminal appearence</label>
+			<input class="form-control" type="text" name="criminal appearence" required>
+		</div>
+	</form>
+</div>
+
+<% include ../../partials/footer.ejs %>

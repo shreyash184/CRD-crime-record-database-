@@ -13,23 +13,23 @@ var con = mysql.createConnection({
 });
 
 //Functions
-function mysqlQuery(query){
+function mysqlQuery(query) {
     // con.connect( (err) => {
     //     if(err){
     //         console.error('Error:- ' + err.stack);
     //         return;
     //     } else{
-            con.query( query, (err, queryOutput) => {
-                if(err) {
-                    console.log(err);
-                    return;
-                }
-                else{
-                    console.log("query successfully executed");
-                    console.log(queryOutput);
-                }
-            });
-        // }
+    con.query(query, (err, queryOutput) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            console.log("query successfully executed");
+            console.log(queryOutput);
+        }
+    });
+    // }
     // });
 }
 
@@ -48,7 +48,7 @@ app.get("/query", (req, res) => {
 
 app.post("/query", (req, res) => {
     mysqlQuery(req.body.name);
-    
+
 });
 
 //Server Port Connection

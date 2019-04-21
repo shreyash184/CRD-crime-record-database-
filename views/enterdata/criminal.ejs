@@ -1,0 +1,43 @@
+<% include ../../partials/header.ejs %>
+<!-- TODO add bootstrap -->
+<div class="container">
+    <h1>Enter the data of criminal</h1>
+    <form>
+        <div class="form-group">
+            <h3>Name of criminal</h3>
+            <label for="first" id="f">First Name:</label>
+            <input class="form-control" id="first" type="text" name="x" required>
+            <label for="middle" id="m">Middle Name:</label>
+            <input class="form-control" id="middle" type="text" name="z" required>
+            <label for="last" id="l">Last Name:</label>
+            <input class="form-control" id="last" type="text" name="y" required>
+        </div>
+
+        <div class="form-group">
+            <h3>Gender</h3>
+            <label for="M">Male</label>
+            <input class="form-control" id="M" type="radio" name="gender" value="Male">
+            <label for="F">Female</label>
+            <input class="form-control" id="F" type="radio" name="gender" value="Female">
+            <label for="O">Other</label>
+            <input class="form-control" id="O" type="radio" name="gender" value="Other">
+        </div>
+
+
+
+        <div class="form-group">
+            <h3>Case No</h3>
+            <label for="Case no">Case No</label>
+            <input class="form-control" type="number" name="case no" required>
+        </div>
+
+        <div class="form-group">
+            <h3>Age</h3>
+            <label for="age">Age</label>
+            <input class="form-control" id="c" type="number" required>
+        </div>
+
+        <button id="submit">submit</button>
+    </form>
+</div>
+<% include ../../partials/footer.ejs %>
