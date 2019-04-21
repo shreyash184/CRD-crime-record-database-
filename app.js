@@ -38,6 +38,10 @@ app.get("/", (req, res) => {
     res.send("Welcome all of you");
 });
 
+app.get("/crime-records", (req, res) => {
+    res.render("CrimeRecords.ejs");
+});
+
 app.get("/query", (req, res) => {
     res.render("home.ejs");
 });
