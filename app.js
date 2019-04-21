@@ -12,13 +12,16 @@ var con = mysql.createConnection({
     database: "records",
 });
 
+con.connect((err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Database Created");
+    }
+});
+
 //Functions
-function mysqlQuery(query) {
-    // con.connect( (err) => {
-    //     if(err){
-    //         console.error('Error:- ' + err.stack);
-    //         return;
-    //     } else{
+function mysqlQuery(query, res) {
     con.query(query, (err, queryOutput) => {
         if (err) {
             console.log(err);
@@ -26,11 +29,9 @@ function mysqlQuery(query) {
         }
         else {
             console.log("query successfully executed");
-            console.log(queryOutput);
+            res.render("./showdata/criminalRecords.ejs", { queryOutput: queryOutput });
         }
     });
-    // }
-    // });
 }
 
 //Route
@@ -38,17 +39,12 @@ app.get("/", (req, res) => {
     res.send("Welcome all of you");
 });
 
-app.get("/crime-records", (req, res) => {
-    res.render("./showdata/CrimeRecords.ejs");
-});
-
 app.get("/query", (req, res) => {
     res.render("home.ejs");
 });
 
 app.post("/query", (req, res) => {
-    mysqlQuery(req.body.name);
-
+    mysqlQuery(req.body.name, res);
 });
 
 //Server Port Connection
