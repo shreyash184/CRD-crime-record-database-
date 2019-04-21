@@ -1,0 +1,46 @@
+<% include ../../partials/header.ejs %>
+
+
+<div class="container center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">case_no</th>
+                <th scope="col">name</th>
+                <th scope="col">photos</th>
+                <th scope="col">probable_reason</th>
+                <th scope="col">age</th>
+                <th scope="col">special_identity</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <ul>
+                <% for(var i=0; i<queryOutput.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= queryOutput[i].case_no %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].name %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].photos %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].probable_reason %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].age %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].special_identity %>
+                    </td>
+                </tr>
+                <% } %>
+            </ul>
+        </tbody>
+    </table>
+</div>
+
+<% include ../../partials/footer.ejs %>

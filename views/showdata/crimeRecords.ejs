@@ -1,0 +1,66 @@
+<% include ../../partials/header.ejs %>
+
+
+<div class="container center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">criminal_id</th>
+                <th scope="col">case_no</th>
+                <th scope="col">pin_code</th>
+                <th scope="col">village</th>
+                <th scope="col">taluka</th>
+                <th scope="col">district</th>
+                <th scope="col">local_address</th>
+                <th scope="col">time_of_crime</th>
+                <th scope="col">regestration_time</th>
+                <th scope="col">date_of_crime</th>
+                <th scope="col">catagory_of_crime</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <ul>
+                <% for(var i=0; i<queryOutput.length; i++) { %>
+                <tr>
+                    <th scope="row">
+                        <%= queryOutput[i].criminal_id %>
+                    </th>
+                    <td>
+                        <%= queryOutput[i].case_no %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].pin_code %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].village %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].taluka %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].district %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].local_address %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].time_of_crime %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].regestration_time %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].date_of_crime %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].catagory_of_crime %>
+                    </td>
+                </tr>
+                <% } %>
+            </ul>
+        </tbody>
+    </table>
+</div>
+
+<% include ../../partials/footer.ejs %>

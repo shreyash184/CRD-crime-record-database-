@@ -1,0 +1,38 @@
+<% include ../../partials/header.ejs %>
+
+
+<div class="container center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">case_no</th>
+                <th scope="col">hotspot</th>
+                <th scope="col">stolen_things</th>
+                <th scope="col">suspects</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <ul>
+                <% for(var i=0; i<queryOutput.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= queryOutput[i].case_no %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].hotspot %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].stolen_things %>
+                    </td>
+                    <td>
+                        <%= queryOutput[i].suspects %>
+                    </td>
+                </tr>
+                <% } %>
+            </ul>
+        </tbody>
+    </table>
+</div>
+
+<% include ../../partials/footer.ejs %>
