@@ -1,16 +1,12 @@
 <% include ../../partials/header.ejs %>
 <!-- TODO add bootstrap -->
-<div class="container">
+<div class="container center">
     <h1>Enter the data of criminal</h1>
     <form>
         <div class="form-group">
             <h3>Name of criminal</h3>
-            <label for="first" id="f">First Name:</label>
-            <input class="form-control" id="first" type="text" name="x" required>
-            <label for="middle" id="m">Middle Name:</label>
-            <input class="form-control" id="middle" type="text" name="z" required>
-            <label for="last" id="l">Last Name:</label>
-            <input class="form-control" id="last" type="text" name="y" required>
+            <label for="first">Name:</label>
+            <input class="form-control" type="text" name="name" required>
         </div>
 
         <div class="form-group">
@@ -23,7 +19,11 @@
             <input class="form-control" id="O" type="radio" name="gender" value="Other">
         </div>
 
-
+        <div class="form-group">
+            <h3>Criminal ID</h3>
+            <label for="Case no">Criminal ID</label>
+            <input class="form-control" type="number" name="case no" required>
+        </div>
 
         <div class="form-group">
             <h3>Case No</h3>
@@ -37,7 +37,13 @@
             <input class="form-control" id="c" type="number" required>
         </div>
 
-        <button id="submit">submit</button>
+        <div class="form-group">
+            <h3>Photo of criminal</h3>
+            <label for="first">Photo:</label>
+            <input class="form-control" type="text" name="name" required>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>
     </form>
 </div>
 <% include ../../partials/footer.ejs %>

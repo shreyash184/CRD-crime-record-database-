@@ -1,8 +1,8 @@
 <% include ../../partials/header.ejs %>
 <!-- TODO add bootstrap -->
-<div class="container">
+<div class="container center">
 	<h1>Enter the data of Crime Record</h1>
-	<form>
+	<form action="/crime-records" method="POST">
 		<div class="form-group">
 			<label for="pin" class="location">Pin Code</label>
 			<input class="form-control" id="" type="number" name="pin" required>
@@ -32,13 +32,13 @@
 		<div class="form-group">
 			<h3>Time of crime</h3>
 			<label for="time">Time of crime</label>
-			<input class="form-control" type="time" name="Time">
+			<input class="form-control" type="number" name="Time">
 		</div>
 
 		<div class="form-group">
 			<h3>Time of registration</h3>
 			<label for="rtime">Time of registration</label>
-			<input class="form-control" type="time" name="RTime">
+			<input class="form-control" type="number" name="RTime">
 		</div>
 
 
@@ -79,10 +79,10 @@
 		<div class="form-group">
 			<h3>Age</h3>
 			<label for="age">Age</label>
-			<input class="form-control" id="c" type="number" required>
+			<input class="form-control" name="age" type="number" required>
 		</div>
 
-		<button value="submit" class="btn btn-primary">submit</button>
+		<button value="submit" class="btn btn-primary">Next</button>
 	</form>
 </div>
 
