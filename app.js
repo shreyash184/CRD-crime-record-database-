@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/crime-records", (req, res) => {
-    res.render("CrimeRecords.ejs");
+    res.render("./showdata/CrimeRecords.ejs");
 });
 
 app.get("/query", (req, res) => {

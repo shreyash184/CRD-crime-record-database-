@@ -1,0 +1,85 @@
+<% include ../../partials/header.ejs %>
+	
+	<div class="container" >
+		<div id="main">
+			<h1>Enter the data of Crime Record</h1>
+		<form>
+			<div>
+				<h3>Location</h3>
+				<label for="Address" id="location">Address:</label>
+				<input id="" type="text" name="address" required>
+			</div>
+			
+			<div>
+				<h3>Catagory of Crime</h3>
+				<label for="Catagory">Catagory of crime</label>
+				<select id="Cat" name="Catagory">
+				<option>Theft</option>
+				<option>Murder</option>
+				<option>Railway crime</option>
+				<option>Lost person</option>
+				<option>Accident</option>
+				<option>Smuggling</option>
+			</select>
+	
+			</div>
+			
+			<div>
+				<h3>Time of crime</h3>
+				<label for="time">Time of crime</label>
+				<input type="time" name="Time">
+			</div>
+	
+			<div>
+				<h3>Time of registration</h3>
+				<label for="rtime">Time of registration</label>
+				<input type="time" name="RTime">
+			</div>
+			
+			
+			<div>
+				<h3>Date</h3>
+				<label for="date">Day:</label>
+			<select id="date" name="Date">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+			</select>
+			<label for="month">Month:</label>
+			<select id="month" name="month">
+				<option>jan</option>
+				<option>feb</option>
+				<option>mar</option>
+				<option>apr</option>
+				<option>may</option>
+				<option>jun</option>
+				<option>jul</option>
+			</select>
+			<label for="year">Year:</label>
+			<select id="year" name="year">
+				<option>1995</option>
+				<option>1996</option>
+				<option>1997</option>
+				<option>1998</option>
+				<option>1999</option>
+				<option>2000</option>
+				<option>2001</option>
+			</select>
+			</div>
+			
+			<div>
+				<h3>Age</h3>
+					<label for="age">Age</label>
+					<input id="c" type="number" required>
+			</div>
+		
+			<button id="submit" >submit</button>
+		</form>
+		</div>
+	</div>
+	
+<% include ../../partials/footer.ejs %>
