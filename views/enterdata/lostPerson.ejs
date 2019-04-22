@@ -1,7 +1,7 @@
 <% include ../../partials/header.ejs %>
 
 <div class="container">
-    <form>
+    <form action="/lost" method="POST">
         <div class="form-group">
             <h3>case no</h3>
             <label for="case_no">case no</label>
@@ -9,28 +9,28 @@
         </div>
         <div class="form-group">
             <label for="name">name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name">
         </div>
 
         <div class="form-group">
             <h3>Age</h3>
             <label for="age">Age</label>
-            <input class="form-control" id="c" type="number" required>
+            <input class="form-control" name="age" type="number" required>
         </div>
 
         <div class="form-group">
             <label for="reason">Probable Reason</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the Probable reason">
+            <input type="text" class="form-control" name="reason" aria-describedby="emailHelp" placeholder="Enter the Probable reason">
         </div>
         <div class="form-group">
             <label for="special_identity">Special identity</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the body marks of lost person">
+            <input type="text" class="form-control" name="identity" aria-describedby="emailHelp" placeholder="Enter the body marks of lost person">
         </div>
 
         <div class="form-group">
             <h3>Photo of person</h3>
             <label for="first">Photo:</label>
-            <input class="form-control" type="text" name="name" required>
+            <input class="form-control" type="text" name="photo" required>
         </div>
 
         <div class="form-group form-check">

@@ -7,7 +7,7 @@
             <tr>
                 <th scope="col">case_no</th>
                 <th scope="col">stolen_things</th>
-                <th scope="col">criminal_apperence</th>
+                <th scope="col">criminal_appearance</th>
             </tr>
         </thead>
         <tbody>
@@ -22,13 +22,16 @@
                         <%= queryOutput[i].stolen_things %>
                     </td>
                     <td>
-                        <%= queryOutput[i].criminal_apperence %>
+                        <%= queryOutput[i].criminals_appearance %>
                     </td>
                 </tr>
                 <% } %>
             </ul>
         </tbody>
     </table>
+    <form action="/theft?_method=DELETE" method="POST">
+		<button type="submit" class="btn btn-primary">Delete</button>
+	</form>
 </div>
 
 <% include ../../partials/footer.ejs %>

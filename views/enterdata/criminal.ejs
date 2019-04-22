@@ -2,7 +2,7 @@
 <!-- TODO add bootstrap -->
 <div class="container center">
     <h1>Enter the data of criminal</h1>
-    <form>
+    <form action="/criminal-records" method="POST">
         <div class="form-group">
             <h3>Name of criminal</h3>
             <label for="name">Name:</label>
@@ -22,13 +22,13 @@
         <div class="form-group">
             <h3>Criminal ID</h3>
             <label for="criminal_id">Criminal ID</label>
-            <input class="form-control" type="number" name="case no" required>
+            <input class="form-control" type="number" name="criminalID" required>
         </div>
 
         <div class="form-group">
             <h3>Case No</h3>
             <label for="Case no">Case No</label>
-            <input class="form-control" type="number" name="case no" required>
+            <input class="form-control" type="number" name="case_no" required>
         </div>
 
         <div class="form-group">
@@ -40,13 +40,13 @@
         <div class="form-group">
             <h3>Age</h3>
             <label for="age">Age</label>
-            <input class="form-control" id="c" type="number" required>
+            <input class="form-control" name="age" type="number" required>
         </div>
 
         <div class="form-group">
             <h3>Photo of criminal</h3>
             <label for="first">Photo:</label>
-            <input class="form-control" type="text" name="name" required>
+            <input class="form-control" type="text" name="photo" required>
         </div>
 
         <button class="btn btn-primary">Submit</button>

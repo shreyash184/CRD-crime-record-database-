@@ -1,7 +1,7 @@
 <% include ../../partials/header.ejs %>
 
 <div class="container">
-    <form>
+    <form action="/murder" method="POST">
         <div class="form-group">
             <h3>case no</h3>
             <label for="case_no">case no</label>
@@ -9,33 +9,33 @@
         </div>
         <div class="form-group">
             <label for="weapon">Murder Weapon</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the name of murder weapon">
+            <input type="text" class="form-control" name="weapon" aria-describedby="emailHelp" placeholder="Enter the name of murder weapon">
         </div>
         <div class="form-group">
             <label for="condition">Condition of the dead body</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter condition of the dead body">
+            <input type="text" class="form-control" name="cond" aria-describedby="emailHelp" placeholder="Enter condition of the dead body">
         </div>
 
         <div class="form-group">
             <label for="victim_details">victim details</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter victim details">
+            <input type="text" class="form-control" name="victim" aria-describedby="emailHelp" placeholder="Enter victim details">
         </div>
 
         <div class="form-group">
             <h3>Age</h3>
             <label for="age">Age</label>
-            <input class="form-control" id="c" type="number" required>
+            <input class="form-control" name="age" type="number" required>
         </div>
 
         <div class="form-group">
             <label for="suspects">Suspects</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name of the suspects">
+            <input type="text" class="form-control" name="suspects" aria-describedby="emailHelp" placeholder="Enter name of the suspects">
         </div>
 
         <div class="form-group">
             <h3>Photo of criminal</h3>
             <label for="first">Photo:</label>
-            <input class="form-control" type="text" name="name" required>
+            <input class="form-control" type="text" name="photo" required>
         </div>
 
         <div class="form-group form-check">

@@ -1,8 +1,7 @@
 <% include ../../partials/header.ejs %>
 
 <div class="container">
-    <form>
-
+    <form action="/railway" method="POST">
         <div class="form-group">
             <h3>case no</h3>
             <label for="case_no">case no</label>
@@ -11,19 +10,19 @@
 
         <div class="form-group">
             <label for="status">Train's status</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter the train's status">
+            <input type="text" class="form-control" name="tStatus" aria-describedby="emailHelp" placeholder="Enter the train's status">
         </div>
         <div class="form-group">
             <label for="No">Train No</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Train number">
+            <input type="number" class="form-control" name="trainNo" aria-describedby="emailHelp" placeholder="Enter Train number">
         </div>
         <div class="form-group">
             <label for="stolen">Stolen Stuff</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Provide stolen stuff">
+            <input type="text" class="form-control" name="stolen" aria-describedby="emailHelp" placeholder="Provide stolen stuff">
         </div>
         <div class="form-group">
             <label for="victim_details">Victim details</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Victim's name">
+            <input type="text" class="form-control" name="victim" aria-describedby="emailHelp" placeholder="Enter Victim's name">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

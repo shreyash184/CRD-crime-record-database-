@@ -1,8 +1,7 @@
 <% include ../../partials/header.ejs %>
 
 <div class="container">
-	<form>
-		<div class="form-group">
+	<form action="/theft" method="POST">
 			<!-- TODO add bootstrap -->
 		<div class="form-group">
 			<h3>case no</h3>
@@ -13,11 +12,13 @@
 		<div class="form-group">
 			<h3>Theft information</h3>
 			<label for="things stolen">Enter Stolen Things</label>
-			<input class="form-control" type="text" name="things stolen" required>
+			<input class="form-control" type="text" name="stolen" required>
 			<label for="criminal appearence" id="ca">Criminal appearence</label>
-			<input class="form-control" type="text" name="criminal appearence" required>
+			<input class="form-control" type="text" name="appearence" required>
 		</div>
+		<button value="submit" class="btn btn-primary">Submit</button>
 	</form>
+	
 </div>
 
 <% include ../../partials/footer.ejs %>
