@@ -282,12 +282,12 @@ app.post("/railway", (req, res) => {
     res.redirect("/railway");
 });
 
-app.delete("/railway_crimes", (req, res) => {
+app.delete("/railway", (req, res) => {
     var caseNo = req.body.case_no;
-    query = "DELETE FROM railway_crimes WHERE case_no = "+caseNo+";";
+    query = "DELETE FROM railway_crime WHERE case_no = "+caseNo+";";
     queries(query, res);
     console.log("Data of case no "+caseNo+" deleted");
-    res.redirect("/railway_crimes");
+    res.redirect("/railway");
 });
 //query route
 app.post("/query", (req, res) => {
