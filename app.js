@@ -51,7 +51,7 @@ function queries(query, res){
 
 //Route
 app.get("/", (req, res) => {
-    res.send("Welcome all of you");
+    res.render("landing.ejs");
 });
 
 app.get("/query", (req, res) => {
