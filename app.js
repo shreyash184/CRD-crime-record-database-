@@ -63,6 +63,10 @@ app.get("/criminal-records", (req, res) => {
     res.render("./enterdata/criminal.ejs");
 });
 
+app.get("/criminal", (req, res) => {
+    mysqlQuery("select * from criminal", "./showdata/criminalRecords.ejs", res);
+});
+
 app.post("/criminal-records", (req, res) => {
     var criminalID = req.body.criminalID ;
     var caseNo = req.body.case_no ;
@@ -76,9 +80,21 @@ app.post("/criminal-records", (req, res) => {
     res.redirect("/criminal");
 });
 
+app.delete("/criminal-records", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM criminal WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/criminal");
+});
+
 //crime records
 app.get("/crime-records", (req, res) => {
     res.render("./enterdata/crime.ejs")
+});
+
+app.get("/crimeRecords", (req, res) => {
+    mysqlQuery("select * from crime_record", "./showdata/crimeRecords.ejs", res);
 });
 
 app.post("/crime-records", (req, res) =>{
@@ -112,6 +128,15 @@ app.post("/crime-records", (req, res) =>{
         res.render("./enterdata/smuggling.ejs");
     }
 });
+
+app.delete("/crime-records", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM crime_record WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/crimeRecords");
+});
+
 //Show routes
 //crime routes
 app.get("/crime", (req, res) => {
@@ -139,9 +164,11 @@ app.post("/theft", (req, res) => {
 });
 
 app.delete("/theft", (req, res) => {
-    query = "DELETE FROM theft WHERE case_no = 26;";
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM theft WHERE case_no = "+caseNo+";";
     queries(query, res);
-    console.log("id 26 deleted");
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/theft");
 });
 
 //murder routes
@@ -162,6 +189,13 @@ app.post("/murder", (req, res) => {
     res.redirect("/murder");
 });
 
+app.delete("/murder", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM murder WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/murder");
+});
 //accident routes
 app.get("/accident", (req, res) => {
     mysqlQuery("select * from accident", "./showdata/accident.ejs", res);
@@ -179,6 +213,13 @@ app.post("/accident", (req, res) => {
     res.redirect("/accident");
 });
 
+app.delete("/accident", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM accident WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/accident");
+});
 //smuggling routes
 app.get("/smuggling", (req, res) => {
     mysqlQuery("select * from smuggling", "./showdata/smuggling.ejs", res);
@@ -194,6 +235,13 @@ app.post("/smuggling", (req, res) => {
     res.redirect("/smuggling");
 });
 
+app.delete("/smuggling", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM smuggling WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/smuggling");
+});
 //lost person routes
 app.get("/lost", (req, res) => {
     mysqlQuery("select * from lost_person", "./showdata/lost_person.ejs", res);
@@ -211,6 +259,13 @@ app.post("/lost", (req, res) => {
     res.redirect("/lost");
 }); 
 
+app.delete("/lost_person", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM lost_person WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/lost_person");
+});
 //railway routes
 app.get("/railway", (req, res) => {
     mysqlQuery("select * from railway_crime", "./showdata/railway_crimes.ejs", res);
@@ -226,7 +281,14 @@ app.post("/railway", (req, res) => {
     queries(query, res);
     res.redirect("/railway");
 });
- 
+
+app.delete("/railway_crimes", (req, res) => {
+    var caseNo = req.body.case_no;
+    query = "DELETE FROM railway_crimes WHERE case_no = "+caseNo+";";
+    queries(query, res);
+    console.log("Data of case no "+caseNo+" deleted");
+    res.redirect("/railway_crimes");
+});
 //query route
 app.post("/query", (req, res) => {
     mysqlQuery(req.body.name, res);
